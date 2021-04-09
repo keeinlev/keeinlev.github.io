@@ -5,8 +5,8 @@ head = document.getElementById('heading');
 main = document.getElementById('main');
 scrollButton = document.getElementById('scrollButton');
 sideBar = document.getElementById('sidebar');
-scrollButtonPosList = [500, 1550, 2400, 3500];
-scrollPosList = [0, 650, 1500, 2600];
+scrollButtonPosList = [500, 1850, 2400, 3500];
+scrollPosList = [0, 870, 1800, 2600];
 scrollFactors = [0.8, 0.8, 0.8, 0.8];
 abmeScroll = false;
 projectScroll = false;
@@ -20,9 +20,10 @@ for (let i=0; i<allTBs.length; i++) {
 trigger = window.outerHeight/window.outerWidth > 1;
 if (trigger) {
     scrollButton.style.visibility = "hidden";
+    sideBar.style.visibility = "hidden";
 }
 
-function onlyPlayOneIn(container) {
+/*function onlyPlayOneIn(container) {
     container.addEventListener("play", function(event) {
     audio_elements = container.getElementsByTagName("audio")
         for(i=0; i < audio_elements.length; i++) {
@@ -37,7 +38,7 @@ function onlyPlayOneIn(container) {
 document.addEventListener("DOMContentLoaded", function() {
 onlyPlayOneIn(document.body);
 });
-
+*/
 
 
 var myScrollDown = function() {
@@ -52,7 +53,7 @@ scrollButton.addEventListener('click', myScrollDown);
 var myScrollFunc = function() {
     textBoxWidth = Math.floor(0.1 * window.outerWidth);
     subtitleFontSize = Math.floor(0.040667 * window.outerHeight);
-    infoBoxFontSize = Math.floor(0.027 * window.outerHeight);
+    infoBoxFontSize = Math.floor(0.047 * window.outerHeight);
     textBoxFontSize = Math.floor(0.02 * window.outerWidth);
     head.height = Math.floor(0.6 * window.outerHeight);
     var y = window.scrollY;
@@ -81,16 +82,18 @@ var myScrollFunc = function() {
     } else {
         newbar.style.animationName = "barSlideIn";
         if (barScrolled) {
-            sidebar.style.backgroundColor = "#1d4761"
+            sidebar.style.backgroundColor = "#2d6781"
             sidebar.style.color = "white";
             head.replaceChild(newbar, socialsbar);
             barScrolled = false;
         }
     }
+    
 
     projects = document.getElementById("projects");
     projects.style.fontSize = infoBoxFontSize + 'px';
     var newprojects = projects.cloneNode(true);
+    /*
     if (y > 2000) {
         newprojects.style.animationName = "fadeOutTop";
         if (!projectScroll) {
@@ -103,18 +106,21 @@ var myScrollFunc = function() {
             main.replaceChild(newprojects, projects);
             projectScroll = true;
         }
-    } else {
+    } 
+    */
+    if (y >= 1100 && !projectScroll) {
         newprojects.style.visibility = "visible";
         newprojects.style.animationName = "fadeInBottom";
-        if (projectScroll) {
-            main.replaceChild(newprojects, projects);
-            projectScroll = false;
-        }
+        //if (projectScroll) {
+        main.replaceChild(newprojects, projects);
+        projectScroll = true;
+        //}
     }
 
     abme = document.getElementById("aboutme");
     abme.style.fontSize = infoBoxFontSize + 'px';
     var newabme = abme.cloneNode(true);
+    /*
     if (y > 900) {
         newabme.style.animationName = "fadeOutTop";
         if (!abmeScroll) {
@@ -127,34 +133,40 @@ var myScrollFunc = function() {
             main.replaceChild(newabme, abme);
             abmeScroll = true;
         }
-    } else {
+    } 
+    */
+    if (y >= 200 && !abmeScroll) {
         newabme.style.visibility = "visible";
         newabme.style.animationName = "fadeInBottom";
-        if (abmeScroll) {
-            main.replaceChild(newabme, abme);
-            abmeScroll = false;
-        }
+        //if (abmeScroll) {
+        main.replaceChild(newabme, abme);
+        abmeScroll = true;
+        //}
     }
+    
 
     contact = document.getElementById("contact");
     contact.style.fontSize = infoBoxFontSize + 'px';
     var newcontact = contact.cloneNode(true);
+    /*
     if (y < 2000) {
         newcontact.style.animationName = "fadeOutBottom";
         if (!contactScroll) {
             main.replaceChild(newcontact, contact);
             contactScroll = true;
         }
-    } else {
+    } 
+    */
+    if (y >= 1500 && !contactScroll) {
         newcontact.style.visibility = "visible";
         newcontact.style.animationName = "fadeInBottom";
-        if (contactScroll) {
-            main.replaceChild(newcontact, contact);
-            contactScroll = false;
-        }
+        //if (contactScroll) {
+        main.replaceChild(newcontact, contact);
+        contactScroll = true;
+        //}
     }
 
-
+/*
     for(let i=0; i<allTBs.length; i++) {
         if (i == 0 || i == 5) {
             allTBs[i].style.fontSize = subtitleFontSize + 'px';
@@ -174,6 +186,7 @@ var myScrollFunc = function() {
         }
         var elm = allTBs[i];
         var newelm = elm.cloneNode(true);
+        
         if (y < start || y > end){
             if (i == 0 || i == 5 || i == 7) {
                 newelm.style.animationName = "fadeOutAbMeText";
@@ -185,37 +198,43 @@ var myScrollFunc = function() {
                 scrollList[i] = false;
             }
             allTBs[i].className = "textbox hide";
-        } else {
+        } 
+        
+        if (y >= start && y <= end && !scrollList[i]) {
             if (i == 0 || i == 5 || i == 7) {
                 newelm.style.animationName = "fadeInAbMeText";
             } else {
                 newelm.style.animationName = "fadeIn";
             }
             newelm.style.visibility = "visible"
-            if (!scrollList[i]) {
-                parallaxcont.replaceChild(newelm,elm);
-                scrollList[i] = true;
-            }
+            //if (!scrollList[i]) {
+            parallaxcont.replaceChild(newelm,elm);
+            scrollList[i] = true;
+            //}
             allTBs[i].className = "textbox show";
         }
-    }
+    }*/
 };
 
+
 window.addEventListener("scroll", myScrollFunc);
+
+
 window.addEventListener("scroll", () =>{
-    let parent = document.getElementById('parallax-cont');
-    let children = parent.getElementsByClassName('textbox');
+    //let parent = document.getElementById('parallax-cont');
+    //let children = parent.getElementsByClassName('textbox');
+    //console.log(children);
     let headChildren = head.children;
-    let abme = document.getElementById('aboutmebox');
-    let proj = document.getElementById('projectsbox');
-    let contact = document.getElementById('contactbox');
-    let y = window.scrollY;
-    abme.style.transform = 'translateY(-' + (window.pageYOffset/4) + 'px)';
-    proj.style.transform = 'translateY(-' + ((window.pageYOffset-1000)/4) + 'px)';
-    contact.style.transform = 'translateY(' + (-window.pageYOffset+2100) + 'px)';
-    for (let i=0; i < children.length; i++) {
-        children[i].style.transform = 'translateY(-' + (window.pageYOffset * (i+1) / children.length) + 'px)';
-    }
+    //let abme = document.getElementById('aboutmebox');
+    //let proj = document.getElementById('projectsbox');
+    //let contact = document.getElementById('contactbox');
+    //let y = window.scrollY;
+    //abme.style.transform = 'translateY(-' + (window.pageYOffset/4) + 'px)';
+    //proj.style.transform = 'translateY(-' + ((window.pageYOffset-1000)/4) + 'px)';
+    //contact.style.transform = 'translateY(' + (-window.pageYOffset+2100) + 'px)';
+    //for (let i=0; i < children.length; i++) {
+    //children[7].style.transform = 'translateY(-' + (window.pageYOffset * (8) / children.length) + 'px)';
+    //}
     if (!trigger) {
         for (let i=0; i < headChildren.length; i++) {
             if (i != headChildren.length-1) {
