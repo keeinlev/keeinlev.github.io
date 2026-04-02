@@ -6,7 +6,7 @@ permalink: /about/
 
 Hi I'm Kevin!
 
-I hate talking about myself but I love talking about the stuff I've worked on.
+This is my attempt at talking more about the stuff I've worked on!
 
 I'll be trying to fill this blog up with details about past projects, personal or for co-op, and new things like my ongoing research efforts in the world of AI.
 
@@ -16,9 +16,9 @@ I've had plenty of experience working with data and shaping systems for reportin
 
 When I'm not working on my projects, I spend most of my time reading, going to the gym, running, or taking walks while mumbling to myself and pondering on the current problem I'm stumped on.
 
-There's nothing I love more than a good sci-fi book. I was first hooked by *Ender's Game* by Orson Scott Card in the seventh grade, and I am currently working my way through *Anathem* by Neal Stephenson. I most recently finished *Rememberance of Earth's Past* by Cixin Liu, which I heavily recommend to anyone remotely interested by cool sci-fi shit, physics, aliens, philosophy, or game theory.
+There's nothing I love more than a good sci-fi book. I was first hooked by *Ender's Game* by Orson Scott Card in the seventh grade, and I recently worked my way through *Anathem* by Neal Stephenson. For a series, I'd heavily recommend *Rememberance of Earth's Past* by Cixin Liu to anyone remotely interested by cool sci-fi stuff, physics, aliens, philosophy, or game theory.
 
-Gosh I took this amazing course, *PHIL208: Philosophy Through Science Fiction* during my last term of university with Prof. Katy Fulfer. SO incredible. I think it helped push my brain to go and start developing my frontal lobe, and also take reading and writing a lot more seriously. Katy, if you're reading this, I hope you and your pet rats are doing amazing, and thank you!!!
+I took this amazing course, *PHIL208: Philosophy Through Science Fiction* during my last term of university with Prof. Katy Fulfer. SO incredible. I think it helped push my brain to go and start developing my frontal lobe, and also take reading and writing a lot more seriously. Katy, if you're reading this, I hope you and your pet rats are doing amazing, and thank you!!!
 
 Anyway, I really hope that this blog may fill up with ideas and curiosities, and that one day some of those can make a positive impact.
 
